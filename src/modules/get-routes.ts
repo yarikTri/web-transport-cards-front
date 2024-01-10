@@ -11,6 +11,11 @@ export interface RouteResp {
     image_uuid: string;
 }
 
+export interface RoutesResp {
+    request_id: number;
+    routes: RouteResp[];
+}
+
 export interface Route {
     id: string;
     name: string;
@@ -59,23 +64,24 @@ const routeMocks: Route[] = [
         end_station: "Мариевка",
         capacity: 70,
         description: "Описание троллейбуса 6",
-
         image: '/default_bus.jpeg',
     },
 ];
 
-export const getRoutes = async (name = ''): Promise<Route[]> => {
+export const getRoutes = async (name: String = ''): Promise<Route[]> => {
     try {
-        const response = await fetch(`http://localhost:8080/routes/search?route=${name}`, {
+        var url = `http://localhost:8080/routes`
+        if (name !== '') url += `?route=${name}`
+        const response = await fetch(url, {
             method: 'GET',
         });
 
         if (response.ok) {
-            const routesResp: RouteResp[] = await response.json();
+            const routesResp: RoutesResp = await response.json();
 
             const routes: Route[] = [];
 
-            for (const route of routesResp) {
+            for (const route of routesResp.routes) {
                 routes.push({
                     id: route.id,
                     name: route.name,
@@ -102,6 +108,10 @@ export const getRoutes = async (name = ''): Promise<Route[]> => {
 
 export async function getRouteImage(imageUUID: string): Promise<string> {
     try {
+        if (imageUUID === "00000000-0000-0000-0000-000000000000") {
+            return imageUUID + ".jpeg";
+        }
+
         const response = await fetch(`http://localhost:9000/images/${imageUUID}`, {
             method: 'GET',
         });
@@ -110,12 +120,11 @@ export async function getRouteImage(imageUUID: string): Promise<string> {
             const imageBuffer = await response.arrayBuffer();
             const base64String = arrayBufferToBase64(imageBuffer);
             return `data:image/jpeg;base64,${base64String}`;
-        } else {
-            return '/default_bus.jpeg';
         }
+        return '/default_bus.jpeg';
     } catch (error) {
         console.error(`Ошибка получения изображения с uuid ${imageUUID}: ${error}`);
-        return '/logo.png';
+        return '/default_bus.jpeg';
     }
 }
 

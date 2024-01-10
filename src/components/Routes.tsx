@@ -4,9 +4,10 @@ import CustomNavbar from './Navbar';
 import Label from './Label';
 import InputField from './Input';
 import Card from './Card';
-import FooterAnyMetro from './Footer';
+import Footer from './Footer';
 import { Route, getRoutes } from '../modules/get-routes';
 import "../style/Routes.css"
+import Breadcrumbs from './Breadcrumbs';
 
 const Routes: FC = () => {
   const [searchValue, setSearchValue] = useState('');
@@ -24,9 +25,14 @@ const Routes: FC = () => {
     handleSearchSubmit();
   }, []);
 
+  const breadcrumbsItems = [
+    { label: 'Все маршруты', link:'' } // Link to the current page
+  ];
+
   return (
     <div>
       <CustomNavbar />
+      <Breadcrumbs items={breadcrumbsItems} /> {/* Include Breadcrumbs component */}
       <Label />
           <InputField
             value={searchValue}
@@ -55,7 +61,7 @@ const Routes: FC = () => {
               )}
             </div>
           </Container>
-      <FooterAnyMetro />
+      <Footer />
     </div>
   );
 }

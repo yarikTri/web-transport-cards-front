@@ -9,7 +9,7 @@ function Footer() {
         <Navbar className="color-navbar custom-navbar" expand="lg">
             <Container>
                 <Nav className="ms-auto footer-text">
-                <p>Кузьмин Ярослав Артемович</p>
+                <p>Кузьмин Ярослав Артемович, ИУ5-52Б</p>
                 </Nav>
             </Container>
         </Navbar>

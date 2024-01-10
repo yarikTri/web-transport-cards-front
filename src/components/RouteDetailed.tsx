@@ -1,10 +1,11 @@
 import { FC, useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import CustomNavbar from './Navbar';
-import FooterAnyMetro from './Footer';
+import Footer from './Footer';
 import { Link } from 'react-router-dom';
 import { Route, getDetailedRoute } from '../modules/get-route-detailed';
 import '../style/Details.css'
+import Breadcrumbs from './Breadcrumbs';
 
 const RouteDetailsPage: FC = () => {
   const [details, setDetails] = useState<Route | null>(null);
@@ -21,9 +22,15 @@ const RouteDetailsPage: FC = () => {
     handlerGetDetail();
   }, [id]);
 
+  const breadcrumbsItems = [
+    { label: 'Все маршруты', link: '/routes' },
+    { label: String(details?.name), link: '' } 
+  ];
+
   return (
     <div>
         <CustomNavbar />
+        <Breadcrumbs items={breadcrumbsItems} /> {/* Include Breadcrumbs component */}
         <div className="model-card">
             <div className="model-card-image">
                 <img src={`${details?.image}`} alt={details?.name} className="model-detail-card" />
@@ -37,7 +44,7 @@ const RouteDetailsPage: FC = () => {
                 <Link to="/routes/" className="btn-back-to-models">Вернуться к услугам</Link>
             </div>
         </div>
-        <FooterAnyMetro />
+        <Footer />
     </div>
   );
 }
