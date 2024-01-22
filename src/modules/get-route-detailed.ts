@@ -29,7 +29,7 @@ const mockRoute: Route = {
     start_time: "05:00",
     end_time: "23:00",
     interval_minutes: 10,
-    start_station: "Ворошилова",
+    start_station: "Улица Ворошилова",
     end_station: "Мариевка",
     capacity: 70,
     description: 'Не существует в природе',
