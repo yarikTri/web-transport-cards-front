@@ -109,7 +109,7 @@ export const getRoutes = async (name: String = ''): Promise<Route[]> => {
 export async function getRouteImage(imageUUID: string): Promise<string> {
     try {
         if (imageUUID === "00000000-0000-0000-0000-000000000000") {
-            return imageUUID + ".jpeg";
+            imageUUID += ".jpeg";
         }
 
         const response = await fetch(`http://localhost:9000/images/${imageUUID}`, {
