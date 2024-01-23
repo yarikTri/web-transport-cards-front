@@ -8,6 +8,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import RoutesPage from './components/RoutesPage.jsx';
 import RouteDetailedPage from './components/RouteDetailedPage.jsx';
 import MainPage from './components/MainPage.jsx';
+import RoutesEditPage from './components/RoutesEditPage.jsx'
+import RouteConstructorPage from './components/RouteConstructorPage.jsx'
 import AuthorizationPage from './components/AuthorizationPage.jsx';
 import Logout from './components/Logout.jsx';
 import RegistrationPage from './components/RegistrationPage.jsx';
@@ -31,6 +33,8 @@ ReactDOM.render(
         <Route path={base_path} element={<RoutesPage />}/>
         <Route path="routes/" element={<RoutesPage />}/>
         <Route path="routes/:id/" element={<RouteDetailedPage />} />
+        <Route path="routes/edit/" element={<RoutesEditPage />}/>
+        <Route path="routes/edit/:id/" element={<RouteConstructorPage />}/>
         <Route path="login/" element={<AuthorizationPage />}/>
         <Route path="logout/" element={<Logout />}/>
         <Route path="registration/" element={<RegistrationPage />}/>

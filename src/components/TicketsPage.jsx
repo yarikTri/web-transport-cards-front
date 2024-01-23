@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getTickets } from '../actions/ticketActions';
 import TableRow from './TableRow';
 import { useCustomNavigate } from '../modules/redirect'
-import NavbarAnyMetro from './Navbar';
+import RybNavbar from './Navbar';
 import Header from './Header';
 import { Link } from 'react-router-dom';
 
@@ -17,6 +17,7 @@ const TicketsPage = () => {
   const dispatch = useDispatch();
   const navigate = useCustomNavigate();
   const user = useSelector((state) => state.auth.user);
+  const isModerator = user && user.is_moderator
 
   const handleGetTickets = async () => {
     if (user) {
@@ -46,7 +47,7 @@ const TicketsPage = () => {
 
   return (
     <div>
-      <NavbarAnyMetro />
+      <RybNavbar showConstructor={true}/>
       <Header showDraft={false} showApp={false} />
       <div className="applications-container">
         <div className='applications-title'>Заявки</div>
@@ -58,7 +59,14 @@ const TicketsPage = () => {
                 <th>Время создания</th>
                 <th>Время формирования</th>
                 <th>Время завершения</th>
+                {isModerator && (
+                  <th> Создатель </th>
+                )}
                 <th>Статус</th>
+                <th>Статус записи на карту</th>
+                {isModerator && (
+                  <th>Действие</th>
+                )}
               </tr>
             </thead>
 

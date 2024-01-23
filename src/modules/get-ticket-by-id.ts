@@ -20,7 +20,7 @@ interface Ticket {
   end_time: string | null;
   state: string;
   write_state: string | null;
-  creator_id: number;
+  creator_username: string;
   moderator_id: number | null;
   routes: Route[];
 }

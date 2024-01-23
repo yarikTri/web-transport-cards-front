@@ -21,7 +21,6 @@ export const loginUser = (username, password) => async (dispatch) => {
     toast.success('Вход выполнен успешно');
     // redirectTo('/routes');
   } catch (error) {
-    console.log(error)
     toast.error('Неверный логин или пароль');
   }
 };

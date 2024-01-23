@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getTicketById } from '../modules/get-ticket-by-id.ts';
 
-import NavbarAnyMetro from './Navbar.jsx';
+import RybNavbar from './Navbar.jsx';
 import Header from './Header.jsx';
 
 import '../style/DraftPage.css'
@@ -31,7 +31,7 @@ const TicketDetailedPage = () => {
 
   return (
     <div>
-        <NavbarAnyMetro />
+        <RybNavbar />
         <Header showDraft={false} showApp={true} />
         <div className="applications-container">
             <div className='applications-title'> Заявка № {id}</div>

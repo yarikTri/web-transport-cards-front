@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import NavbarAnyMetro from './Navbar';
-import FooterAnyMetro from './Footer';
+import RybNavbar from './Navbar';
+import RybFooter from './Footer';
 import Header from './Header';
 import { Link } from 'react-router-dom';
 import { getRouteDetailed } from '../actions/routeDetailedActions';
@@ -22,7 +22,7 @@ const RouteDetailedPage = () => {
 
   return (
     <div>
-      <NavbarAnyMetro />
+      <RybNavbar showConstructor={true}/>
       <Header showDraft={false} showApp={true}/>
       <div className="model-card">
         <div className="model-card-image">
@@ -37,7 +37,7 @@ const RouteDetailedPage = () => {
           <Link to="/routes/" className="btn-back-to-models">Ко всем маршрутам</Link>
         </div>
       </div>
-      <FooterAnyMetro />
+      {/* <RybFooter /> */}
     </div>
   );
 }

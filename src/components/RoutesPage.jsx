@@ -2,11 +2,11 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setRouteAction, setSearchValueAction } from '../actions/routesActions';
 import { Col, Row, Spinner, Container } from 'react-bootstrap';
-import NavbarAnyMetro from './Navbar';
+import RybNavbar from './Navbar';
 import Header from './Header';
 import InputField from './InputField';
 import RouteCard from './RouteCard';
-import FooterAnyMetro from './Footer';
+import RybFooter from './Footer';
 import '../style/RoutesPage.css';
 import { getDraft } from '../actions/draftActions';
 
@@ -37,7 +37,7 @@ const RoutesPage = () => {
 
   return (
     <div>
-      <NavbarAnyMetro />
+      <RybNavbar showConstructor={true} />
       <Header showDraft={true} showApp={true}/>
       <InputField
         value={searchValue}
@@ -66,7 +66,7 @@ const RoutesPage = () => {
           )}
         </div>
       </Container>
-      <FooterAnyMetro />
+      {/* <RybFooter /> */}
     </div>
   );
 };

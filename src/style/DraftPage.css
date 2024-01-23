@@ -1,4 +1,4 @@
-/* CartPage.css */
+/* DraftPage.css */
 
 .applications-container {
     display: flex;
@@ -30,7 +30,7 @@
   }
   
 
-  .parameters-modeling-box {
+  .parameters-route-box {
     font-family: 'Roboto', sans-serif;
     
 }

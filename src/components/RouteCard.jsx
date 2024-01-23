@@ -1,7 +1,7 @@
 
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import '../style/ModelCard.css';
+import '../style/RouteCard.css';
 import { addRouteToDraft } from '../actions/draftActions';
 
 const RouteCard = ({

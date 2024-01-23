@@ -1,9 +1,9 @@
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import '../style/Footer.css';
 
-function FooterAnyMetro() {
+function RybFooter() {
   return (
-    <div>
+    <div className='ryb-footer'>
         <Navbar className="color-navbar custom-navbar" expand="lg">
             <Container>
                 <Nav className="ms-auto footer-text">
@@ -15,4 +15,4 @@ function FooterAnyMetro() {
   );
 }
 
-export default FooterAnyMetro;
+export default RybFooter;
