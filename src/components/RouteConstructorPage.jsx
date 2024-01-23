@@ -8,7 +8,7 @@ import RybNavbar from './Navbar';
 import Header from './Header';
 import { useCustomNavigate } from '../modules/redirect';
 import '../style/RouteConstructorPage.css';
-import routeDetailed from '../../src___/slices/routeDetailed.js';
+import routeDetailed from '../slices/routeDetailedSlice.js';
 
 const RouteConstructorPage = () => {
   const dispatch = useDispatch();

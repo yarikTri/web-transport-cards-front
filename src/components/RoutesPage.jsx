@@ -9,6 +9,7 @@ import RouteCard from './RouteCard';
 import RybFooter from './Footer';
 import '../style/RoutesPage.css';
 import { getDraft } from '../actions/draftActions';
+import Label from './Label';
 
 const RoutesPage = () => {
   const dispatch = useDispatch();
@@ -39,6 +40,7 @@ const RoutesPage = () => {
     <div>
       <RybNavbar showConstructor={true} />
       <Header showDraft={true} showApp={true}/>
+      <Label/>
       <InputField
         value={searchValue}
         setValue={(value) => dispatch(setSearchValueAction(value))}
@@ -66,7 +68,7 @@ const RoutesPage = () => {
           )}
         </div>
       </Container>
-      {/* <RybFooter /> */}
+      <RybFooter />
     </div>
   );
 };

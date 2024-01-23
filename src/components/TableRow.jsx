@@ -57,7 +57,7 @@ const TableRow = ({ ticket }) => {
         <td onClick={redirectToDetail}> {ticket.creator_username}</td>
       )}
       <td onClick={redirectToDetail}> {statusAliases[ticket.state]}</td>
-      <td onClick={redirectToDetail}> 
+      <td > 
         {writeStateAliases[ticket.write_state]} {isModerator && ticket.write_state !== 'success' && ticket.state === 'approved' && 
           <Link onClick={handleWrite} className='form-button complete-button'> Записать </Link>
         }
