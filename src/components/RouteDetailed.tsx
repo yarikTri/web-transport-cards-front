@@ -33,7 +33,7 @@ const RouteDetailsPage: FC = () => {
         <Breadcrumbs items={breadcrumbsItems} /> {/* Include Breadcrumbs component */}
         <div className="model-card">
             <div className="model-card-image">
-                <img src={`${details?.image}`} alt={details?.name} className="model-detail-card" />
+                <img src={`${new URL("/web-transport-cards-front/default_bus.jpg", import.meta.url).href}`} alt={details?.name} className="model-detail-card" />
             </div>
             <div className="model-card-description">
                 <h2>{details?.name}</h2>

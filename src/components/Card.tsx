@@ -18,11 +18,10 @@ interface Card {
 const Card: FC<Card> = ({
   id,
   name,
-  image,
 }) => (
     <div className="custom-card">
     <Link to={`/routes/${id}`} className="card-href">
-      <img src={`${image}`} alt={name} className="custom-card-img" />
+      <img src={`${new URL("/web-transport-cards-front/default_bus.jpg", import.meta.url).href}`} alt={name} className="custom-card-img" />
       <div className="custom-card-body">
         <p className="custom-card-text text-center">{name}</p>
       </div>
