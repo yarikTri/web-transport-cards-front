@@ -17,11 +17,11 @@
 
 .contact-button:hover {
     background-color: #cae4ff;
-    color: #0a5baf;
+    color: #0aaf70;
 }
 
 .color-navbar {
-    background-color: #0a5baf;
+    background-color: rgb(10, 175, 167);
     width: 100%;
 }
 

@@ -7,9 +7,9 @@ import { Route, getDetailedRoute } from '../modules/get-route-detailed';
 import '../style/Details.css'
 import Breadcrumbs from './Breadcrumbs';
 
-const RouteDetailsPage: FC = () => {
+const RouteDetailsPage = () => {
   const [details, setDetails] = useState<Route | null>(null);
-  const { id } = useParams<{ id: string }>();
+  const { id } = useParams<{ id: string }>
 
   const handlerGetDetail = async () => {
     if (id) {
@@ -21,11 +21,6 @@ const RouteDetailsPage: FC = () => {
   useEffect(() => {
     handlerGetDetail();
   }, [id]);
-
-  const breadcrumbsItems = [
-    { label: 'Все маршруты', link: '/routes' },
-    { label: String(details?.name), link: '' } 
-  ];
 
   return (
     <div>

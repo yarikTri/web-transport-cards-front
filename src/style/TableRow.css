@@ -1,0 +1,61 @@
+/* TableRow.css */
+
+.status-cell {
+    font-weight: bold; /* Можете настроить другие стили, если нужно */
+  }
+  
+  .status-cell.work {
+    background-color: rgba(255, 255, 0, 0.5);
+  }
+  
+  .status-cell.comp {
+    background-color: rgba(0, 128, 0, 0.5);
+  }
+  
+  .status-cell.canc {
+    background-color: rgba(255, 0, 0, 0.5);
+  }
+  .modeling-list {
+    margin-top: 10px;
+  }
+.result-button {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    padding: 8px;
+    margin-top: 1%;
+    cursor: pointer;
+    border-radius: 20px;
+    color: white;
+    border: none;
+    background-color: #139c53;
+    margin-bottom: 5px!important;
+    text-decoration: none!important;
+}
+
+.result-button:hover {
+    background-color: #11703d;
+    margin-bottom: 5px!important;
+}
+
+
+/* .details-link {
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  border-collapse: collapse;
+  color: inherit;
+} */
+
+.table-row:hover {
+  background-color: #aae8f17f;
+  cursor: pointer;
+}
+
+/* .table-row tr {
+  display: block;
+  padding: 10px;
+  border: 1px solid #0a5baf;
+  color: #0a5baf;  
+} */
+
+
