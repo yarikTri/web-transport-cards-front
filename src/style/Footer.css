@@ -1,3 +1,8 @@
+.ryb-footer{
+    position: relative;
+	min-height: 100%;
+}
+
 .footer-text {
     font-size: 17px;
     font-family: 'Roboto', sans-serif;
@@ -17,11 +22,11 @@
 
 .contact-button:hover {
     background-color: #cae4ff;
-    color: #0aaf70;
+    color: #0a5baf;
 }
 
 .color-navbar {
-    background-color: rgb(10, 175, 167);
+    background-color: #0a5baf;
     width: 100%;
 }
 
